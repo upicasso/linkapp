@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Link;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -23,6 +24,7 @@ class LinkCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('url'),
             IntegerField::new('priority'),
+            DateTimeField::new('createdAt')->hideOnForm(),
         ];
     }
 }
